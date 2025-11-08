@@ -1,9 +1,9 @@
-## 🚀 Comprehensive Credit Risk Assessment Framework: A Machine Learning Approach to Loan Default Prediction
-### Project Overview
+# 🚀 Comprehensive Credit Risk Assessment Framework: A Machine Learning Approach to Loan Default Prediction
+## Project Overview
 
 This project implements a robust machine learning framework for predicting loan default (credit risk) using the lending_data.csv dataset. The goal is to develop a predictive model that accurately identifies high-risk loans to mitigate financial losses for the lending institution.
 
-### The framework consists of two primary machine learning tasks:
+## The framework consists of two primary machine learning tasks:
 
 Regression Task (Borrower Income Prediction): Training a model to estimate borrower_income as an intermediate feature.
 
@@ -91,3 +91,13 @@ Model Selection: Multiple classifiers were trained, including Logistic Regressio
 Imbalance Handling: Models were configured to handle imbalance through methods like class_weight='balanced' (for LogReg, RF) or scale_pos_weight (for XGBoost), and Balanced Random Forest (which subsamples the majority class).
 
 Evaluation Metric: Balanced Accuracy and ROC-AUC were prioritized over standard accuracy due to the high class imbalance.
+
+
+## 💡 Recommendations for Deployment
+Production Model: The Balanced Random Forest Classifier should be deployed as the primary risk assessment model.
+
+Risk-Based Pricing: Utilize the model's probability score (Probability of being high-risk) to implement dynamic, risk-based interest rate adjustments for loans flagged as medium-risk.
+
+Monitoring: Set up continuous monitoring of the model's Balanced Accuracy and Recall on new data to prevent model drift and ensure continued high performance in detecting defaults.
+
+Data Retraining: Implement a regular schedule (e.g., quarterly) to retrain the model with the latest loan data.
